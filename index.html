@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zlog Games — Loja de Jogos</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="bg-dark text-light">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow-sm">
+      <div class="container">
+        <a class="navbar-brand text-warning fw-bold" href="#">Zlog Games</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#inicio">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#jogos">Jogos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <button
+      id="cart-toggle"
+      class="btn btn-warning btn-lg position-fixed end-0 m-3"
+      aria-label="Abrir carrinho"
+      title="Carrinho"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#cartOffcanvas"
+    >
+      🛒 <span id="cart-count" class="badge bg-dark text-warning ms-2">0</span>
+    </button>
+
+    <section id="inicio" class="py-5 text-center bg-black">
+      <div class="container py-5">
+        <h1 class="display-4 fw-bold text-warning">Bem-vindo à Zlog Games</h1>
+        <p class="lead">Os melhores jogos com preços acessíveis</p>
+        <a href="#jogos" class="btn btn-warning btn-lg mt-3">Ver catálogo</a>
+      </div>
+    </section>
+
+    <section id="sobre" class="py-5 bg-dark">
+      <div class="container">
+        <h2 class="text-warning mb-3">Sobre</h2>
+        <p class="text-light">
+          A Zlog Games se destaca por trabalhar com um modelo baseado em
+          parcerias com distribuidoras e desenvolvedoras, adquirindo chaves
+          digitais (keys) oficiais com preços reduzidos em eventos promocionais
+          internacionais. Isso permite que a loja repasse parte desse desconto
+          aos consumidores, oferecendo títulos populares por valores bastante
+          abaixo do praticado nas lojas tradicionais. Além das promoções
+          frequentes, a Zlog Games aposta em ferramentas tecnológicas que
+          otimizam a experiência do usuário. O site utiliza um sistema de
+          monitoramento automático de preços, capaz de identificar oscilações no
+          valor dos jogos em diferentes regiões e aplicar descontos
+          instantâneos.
+        </p>
+      </div>
+    </section>
+
+    <section id="jogos" class="py-5">
+      <div class="container">
+        <h2 class="text-warning mb-4">Jogos em destaque</h2>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card bg-black text-light h-100">
+              <img src="img/gta.jpg" class="card-img-top" alt="GTA 5" />
+              <div class="card-body">
+                <h5 class="card-title text-warning">GTA 5</h5>
+                <p class="card-text">Ação e mundo aberto</p>
+                <p class="card-price text-warning fw-bold">R$ 89,90</p>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning w-100 detalhe-btn"
+                  data-game="gta5"
+                >
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-black text-light h-100">
+              <img src="img/elden.jpg" class="card-img-top" alt="Elden Ring" />
+              <div class="card-body">
+                <h5 class="card-title text-warning">Elden Ring</h5>
+                <p class="card-text">RPG vencedor de prêmios</p>
+                <p class="card-price text-warning fw-bold">R$ 199,90</p>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning w-100 detalhe-btn"
+                  data-game="elden"
+                >
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-black text-light h-100">
+              <img src="img/star.jpg" class="card-img-top" alt="Starfield" />
+              <div class="card-body">
+                <h5 class="card-title text-warning">Starfield</h5>
+                <p class="card-text">Aventura espacial</p>
+                <p class="card-price text-warning fw-bold">R$ 249,90</p>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning w-100 detalhe-btn"
+                  data-game="starfield"
+                >
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-black text-light h-100">
+              <img src="img/red dead.jpg" class="card-img-top" alt="RDR2" />
+              <div class="card-body">
+                <h5 class="card-title text-warning">Red Dead Redemption 2</h5>
+                <p class="card-text">Velho oeste realista</p>
+                <p class="card-price text-warning fw-bold">R$ 119,90</p>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning w-100 detalhe-btn"
+                  data-game="rdr2"
+                >
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-black text-light h-100">
+              <img
+                src="img/mortal k.jpg"
+                class="card-img-top"
+                alt="Mortal Kombat 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-warning">Mortal Kombat 1</h5>
+                <p class="card-text">Luta intensa e brutal</p>
+                <p class="card-price text-warning fw-bold">R$ 149,90</p>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning w-100 detalhe-btn"
+                  data-game="mortalk1"
+                >
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-black text-light h-100">
+              <img
+                src="img/ea fc.jpg"
+                class="card-img-top"
+                alt="EA Sports FC 26"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-warning">EA Sports FC 26</h5>
+                <p class="card-text">Futebol realista</p>
+                <p class="card-price text-warning fw-bold">R$ 249,90</p>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning w-100 detalhe-btn"
+                  data-game="ea_fc26"
+                >
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-black text-light h-100">
+              <img
+                src="img/battlefield.jpg"
+                class="card-img-top"
+                alt="Battlefield 6"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-warning">battlefield 6</h5>
+                <p class="card-text">FPS de ação intensa</p>
+                <p class="card-price text-warning fw-bold">R$ 179,90</p>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning w-100 detalhe-btn"
+                  data-game="battlefield6"
+                >
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-black text-light h-100">
+              <img src="img/zelda.avif" class="card-img-top" alt="Zelda TOTK" />
+              <div class="card-body">
+                <h5 class="card-title text-warning">Zelda TOTK</h5>
+                <p class="card-text">Aventura épica</p>
+                <p class="card-price text-warning fw-bold">R$ 299,90</p>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning w-100 detalhe-btn"
+                  data-game="zelda_totk"
+                >
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-black text-light h-100">
+              <img src="img/cyber.jpg" class="card-img-top" alt="Cyberpunk" />
+              <div class="card-body">
+                <h5 class="card-title text-warning">Cyberpunk 2077</h5>
+                <p class="card-text">Mundo futurista</p>
+                <p class="card-price text-warning fw-bold">R$ 129,90</p>
+                <button
+                  type="button"
+                  class="btn btn-outline-warning w-100 detalhe-btn"
+                  data-game="cyberpunk2077"
+                >
+                  Detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="py-5 bg-black">
+      <div class="container">
+        <h2 class="text-warning mb-3">Contato</h2>
+
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" required />
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">E‑mail</label>
+            <input type="email" class="form-control" required />
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Mensagem</label>
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
+
+          <div class="col-12">
+            <button class="btn btn-warning">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="text-center bg-black py-3 mt-4 text-light">
+      © 2024 Zlog Games — Todos os direitos reservados
+    </footer>
+
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="cartOffcanvas"
+      aria-labelledby="cartOffcanvasLabel"
+    >
+      <div class="offcanvas-header bg-dark text-light">
+        <h5 id="cartOffcanvasLabel" class="text-warning">Carrinho</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      <div class="offcanvas-body bg-dark text-light">
+        <div id="cartItems" class="mb-3"></div>
+        <div id="cartTotal" class="fw-bold text-warning mb-3">
+          Total: R$ 0,00
+        </div>
+        <button id="checkoutBtn" class="btn btn-warning w-100">
+          Finalizar compra
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="detalheModal"
+      tabindex="-1"
+      aria-labelledby="detalheModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title text-warning" id="detalheModalLabel">
+              Título do Jogo
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex align-items-start">
+              <img
+                id="detalheImg"
+                src=""
+                alt="Imagem do jogo"
+                class="img-thumbnail me-3"
+                style="width: 120px; height: auto"
+              />
+              <div>
+                <p id="detalheDescricao" class="mb-2">Descrição do jogo...</p>
+                <p id="detalhePreco" class="text-warning fw-bold mb-2">
+                  Preço: R$ --
+                </p>
+                <p id="detalheAvaliacao" class="fw-bold">
+                  Avaliação na Steam: --%
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              id="addToCartBtn"
+              type="button"
+              class="btn btn-warning"
+              data-game=""
+            >
+              Adicionar ao carrinho
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const jogos = {
+        gta5: {
+          titulo: "GTA 5",
+          descricao:
+            "Ação em mundo aberto com missões variadas, veículos e personalização. Clássico popular.",
+          avaliacao: "97% (Muito positiva)",
+          preco: "R$ 89,90",
+          img: "img/gta.jpg",
+        },
+        elden: {
+          titulo: "Elden Ring",
+          descricao:
+            "RPG de ação com mundo aberto, alto desafio e narrativa sombria criada por FromSoftware.",
+          avaliacao: "95% (Extremamente positiva)",
+          preco: "R$ 199,90",
+          img: "img/elden.jpg",
+        },
+        starfield: {
+          titulo: "Starfield",
+          descricao:
+            "Aventura espacial com exploração de planetas, personalização de naves e missões variadas.",
+          avaliacao: "78% (Positiva)",
+          preco: "R$ 249,90",
+          img: "img/star.jpg",
+        },
+        rdr2: {
+          titulo: "Red Dead Redemption 2",
+          descricao:
+            "Experiência narrativa no velho oeste, mundo detalhado e jogabilidade imersiva.",
+          avaliacao: "96% (Extremamente positiva)",
+          preco: "R$ 119,90",
+          img: "img/red dead.jpg",
+        },
+        mortalk1: {
+          titulo: "Mortal Kombat 1",
+          descricao:
+            "Luta intensa com sistema de combos, fatalities e grande foco em competitividade.",
+          avaliacao: "82% (Positiva)",
+          preco: "R$ 149,90",
+          img: "img/mortal k.jpg",
+        },
+        ea_fc26: {
+          titulo: "EA Sports FC 26",
+          descricao:
+            "Futebol realista com licenças, modos de jogo e atualizações sazonais.",
+          avaliacao: "70% (Mista)",
+          preco: "R$ 249,90",
+          img: "img/ea fc.jpg",
+        },
+        battlefield6: {
+          titulo: "Battlefield 6",
+          descricao:
+            "FPS com grandes batalhas, veículos e foco em jogabilidade em equipe.",
+          avaliacao: "68% (Mista)",
+          preco: "R$ 179,90",
+          img: "img/battlefield.jpg",
+        },
+        zelda_totk: {
+          titulo: "Zelda: Tears of the Kingdom",
+          descricao:
+            "Aventura épica com mundo aberto, puzzles e exploração profunda.",
+          avaliacao: "98% (Extremamente positiva)",
+          preco: "R$ 299,90",
+          img: "img/zelda.avif",
+        },
+        cyberpunk2077: {
+          titulo: "Cyberpunk 2077",
+          descricao:
+            "Mundo futurista com narrativa ramificada; melhorias significativas após patches.",
+          avaliacao: "74% (Positiva após atualizações)",
+          preco: "R$ 129,90",
+          img: "img/cyber.jpg",
+        },
+      };
+
+      let cart = [];
+
+      function parsePrice(precoStr) {
+        return (
+          parseFloat(precoStr.replace(/[R$\s\.]/g, "").replace(",", ".")) || 0
+        );
+      }
+
+      function updateCartCount() {
+        const count = cart.reduce((s, i) => s + i.qtd, 0);
+        document.getElementById("cart-count").textContent = count;
+      }
+
+      function renderCart() {
+        const container = document.getElementById("cartItems");
+        container.innerHTML = "";
+        if (cart.length === 0) {
+          container.innerHTML = '<p class="text-light">Carrinho vazio.</p>';
+        } else {
+          cart.forEach((item) => {
+            const row = document.createElement("div");
+            row.className =
+              "d-flex justify-content-between align-items-center mb-3 p-2 border border-warning rounded";
+            row.innerHTML = `
+              <div class="d-flex align-items-center" style="flex: 1;">
+                <img src="${item.img}" alt="${
+              item.titulo
+            }" class="img-thumbnail me-3" style="width: 80px; height: auto;">
+                <div>
+                  <div class="text-warning fw-bold">${item.titulo}</div>
+                  <div class="text-light small">R$ ${item.preco
+                    .toFixed(2)
+                    .replace(".", ",")} x ${item.qtd}</div>
+                </div>
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-light" data-key="${
+                  item.key
+                }" data-action="minus">-</button>
+                <button class="btn btn-sm btn-outline-danger" data-key="${
+                  item.key
+                }" data-action="remove">✕</button>
+              </div>
+            `;
+            container.appendChild(row);
+          });
+        }
+        const total = cart.reduce((s, i) => s + i.preco * i.qtd, 0);
+        document.getElementById("cartTotal").textContent =
+          "Total: R$ " + total.toFixed(2).replace(".", ",");
+        updateCartCount();
+      }
+
+      function addToCartByKey(key) {
+        const g = jogos[key];
+        if (!g) return;
+        const price = parsePrice(g.preco);
+        const existing = cart.find((i) => i.key === key);
+        if (existing) {
+          existing.qtd++;
+        } else {
+          cart.push({
+            key,
+            titulo: g.titulo,
+            preco: price,
+            qtd: 1,
+            img: g.img,
+          });
+        }
+        renderCart();
+      }
+
+      function removeFromCart(key) {
+        cart = cart.filter((i) => i.key !== key);
+        renderCart();
+      }
+
+      function changeQty(key, delta) {
+        const item = cart.find((i) => i.key === key);
+        if (!item) return;
+        item.qtd += delta;
+        if (item.qtd <= 0) removeFromCart(key);
+        renderCart();
+      }
+
+      document.querySelectorAll(".detalhe-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const key = btn.getAttribute("data-game");
+          const data = jogos[key];
+          if (!data) return;
+
+          document.getElementById("detalheModalLabel").textContent =
+            data.titulo;
+          document.getElementById("detalheDescricao").textContent =
+            data.descricao;
+          document.getElementById("detalheAvaliacao").textContent =
+            "Avaliação na Steam: " + data.avaliacao;
+          document.getElementById("detalhePreco").textContent =
+            "Preço: " + data.preco;
+          const imgEl = document.getElementById("detalheImg");
+          imgEl.src = data.img;
+          imgEl.alt = data.titulo;
+
+          const addBtn = document.getElementById("addToCartBtn");
+          addBtn.setAttribute("data-game", key);
+
+          const modalEl = document.getElementById("detalheModal");
+          const modal = new bootstrap.Modal(modalEl);
+          modal.show();
+        });
+      });
+
+      document.getElementById("addToCartBtn").addEventListener("click", (e) => {
+        const key = e.currentTarget.getAttribute("data-game");
+        if (!key) return;
+        addToCartByKey(key);
+
+        const detalheModalEl = document.getElementById("detalheModal");
+        bootstrap.Modal.getInstance(detalheModalEl)?.hide();
+        const cartOff = new bootstrap.Offcanvas(
+          document.getElementById("cartOffcanvas")
+        );
+        cartOff.show();
+      });
+
+      document.getElementById("cartItems").addEventListener("click", (e) => {
+        const btn = e.target.closest("button");
+        if (!btn) return;
+        const key = btn.getAttribute("data-key");
+        const action = btn.getAttribute("data-action");
+        if (action === "remove") removeFromCart(key);
+        if (action === "minus") changeQty(key, -1);
+      });
+
+      document.getElementById("checkoutBtn").addEventListener("click", () => {
+        if (cart.length === 0) return;
+        cart = [];
+        renderCart();
+        const off = bootstrap.Offcanvas.getInstance(
+          document.getElementById("cartOffcanvas")
+        );
+        off?.hide();
+        alert("Compra finalizada (simulada). Obrigado!");
+      });
+
+      renderCart();
+    </script>
+  </body>
+</html>
