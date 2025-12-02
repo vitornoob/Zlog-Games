@@ -10,4 +10,4 @@ Período: 1º Período
 Faculdade: FICR
 
  🌐 Site Publicado
-👉 https://vitornoob.github.io/Site-Zlog-Games/
+👉 https://vitornoob.github.io/Zlog-Games/
